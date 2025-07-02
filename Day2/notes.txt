@@ -1,0 +1,77 @@
+#every method has 2 scope prototype and constructor
+- constructor is static clone
+- prototype is dynamic reference
+
+
+Factory pattern
+-should have object in function/method which stores some info  (properties)
+-having arguments storing info (which is var ie private)
+-returning object at end
+-Disadvantage: when u do common task u end up doing duplicating methods which serves common functionality which is not efficient which decrease performance
+-Each object gets its own copy of functions like sayHi(), wasting memory.
+
+constructor pattern
+-using this instead of object 
+-dont forces to create object (no uncessary object creation)
+-info stores using this and along with that new keyword is used to create instance
+-A Constructor function is used with the new keyword to create objects. Inside, you use this to assign properties to the instance.
+-Disadvantage: but still method is duplicated & anything inside constructor it is bound to get clone (ie static clone)
+
+
+prototype pattern
+-To avoid duplication, you must move methods to the prototype. (ie dynamic reference)
+-it is shared memory/scope avilable to all instances for dynamic reference
+-similar to constructor new keyword is used here
+-therefore distinct method use constructor and same method use prototype
+-Disadvantage: but here attributes (like name ,age ) gets repeated/duplicate (only method should be not duplicate)
+- prototype is dynamic refernce u can add on references later on
+-instances dont follow null prototype (populates instances first then declare instances)
+-one should not store reference types in prototype (allows that is only common method) //solution : contructor prototype pattern
+#mix of prototype and constructor ie contructor prototype pattern
+-class in es6 is nothing but function
+-constructor ahs speicific section
+-outside constuctor is nothing but prototypes
+
+
+ProtoType Chaining
+-linking one prototype with other
+-Enables inheritance in JavaScript (before ES6 class).
+-Use Child.prototype = new Parent(); to inherit from Parent.
+-Ensures child instances get access to parent’s prototype methods.
+-instance instanceof Parent and Parent.prototype.isPrototypeOf(instance) return true.
+-Problem: If parent constructor has reference-type properties, they get shared across all children.
+-i1=new SubType(); //[i1,subtype.prototype,superType.prototype] console.log(i1.x);
+-Assigning a new object to SubType.prototype breaks its link to SuperType.prototype.(not assign values to subtype as it will not search supertype)
+-This disrupts inheritance — methods from the parent are no longer accessible.
+-to correct above initialisation of prototype should be done first then prototype 
+-mutating the prototype after Chaining breaks the Chaining.
+
+
+Constructor Stealing
+-Solves the problem of shared reference types (like arrays/objects) in prototype pattern.
+-Calls the parent constructor inside the child constructor using .call(this).
+-This creates a separate copy of reference-type properties for each instance.
+-No need to create an instance of the parent — directly invokes its constructor.
+-Ensures instance-specific data without affecting other instances.
+-Limitation: Inherits only properties, not methods from the parent’s prototype.
+-Commonly combined with prototype chaining to inherit both methods and instance properties (called combination inheritance).
+
+Combination Inheritance
+-Combines both constructor stealing and prototype chaining to inherit:
+-Instance properties (via constructor stealing)
+-Shared methods (via prototype chaining)
+-Constructor function is called using .call(this) to avoid shared reference-type properties.
+-Prototype is replaced with an instance of the parent to inherit methods.
+-Allows each child instance to have its own copy of properties while sharing methods via prototype.
+-Drawbacks: The parent constructor is called twice — once for call(this) and once during new Parent() (redundant initialization).
+-Considered the most commonly used inheritance pattern before ES6 classes.
+
+
+
+es6
+-for non lexical scope let is local and var is global
+-to protect identifier then start with const 
+-js has silent overwrite feature
+-binding: a function which is exported using export keyword & import it which comes in window scope
+-modules have to be run on extenstion (live server)
+-this that arrow function

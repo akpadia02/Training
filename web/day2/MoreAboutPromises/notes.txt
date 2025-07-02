@@ -1,0 +1,44 @@
+//set time out is not exact time out ,it is minimum time out
+//queue: taskQueue, MicroTask queue, callStack, event loop
+//microtask queue: promise resolve or reject call back entry is made in this queue
+//both micro & task have entries , then micro task takes step as promise has high priority, microtask are given high preference till all entries of it dequeue then task queue.
+
+
+
+//setTimeout Behavior
+-setTimeout(fn, delay) runs fn after at least delay milliseconds.
+-It's not a precise timer — actual delay may be longer.
+-Callback is pushed to Task Queue after delay.
+
+//JavaScript Execution Model
+-Call Stack: Executes all synchronous code.
+-Task Queue (Macro Task Queue):Stores: setTimeout, setInterval, DOM events, etc.
+-Microtask Queue:Stores: Promise.then, Promise.catch, queueMicrotask, etc.
+-Higher priority than Task Queue.
+
+//Event Loop Steps
+-Run synchronous code in Call Stack.
+-If stack is empty:Run all Microtasks (until queue is empty).
+-Then run one Task from Task Queue.
+-Repeat steps continuously.
+
+//Priority Order:Call Stack->Microtask Queue (Promises, queueMicrotask)->Task Queue (setTimeout, events)
+
+=======================
+//Promise Chaining
+-Each .then() returns a new promise.
+-Output of one .then() is passed as input to the next.
+-Chaining helps run async tasks sequentially
+
+//Error Handling in Promise Chains
+-If any .then() throws an error or returns a rejected promise, the chain skips all subsequent then()s unless the error is handled.
+-Use .catch() at the end to handle unhandled rejections globally.
+
+//Local vs Global Error Handling
+-Local handling: Provide second argument in .then(success, error) to catch locally and keep the chain alive.
+-Global handling: Use .catch() to catch unhandled errors from the entire chain.
+
+//Behavior flow
+-If a .then() has no return, the next receives undefined.
+-If an error is thrown in .then(), it’s treated as a rejected promise.
+-A throw inside local error handler will propagate to .catch() unless handled again.

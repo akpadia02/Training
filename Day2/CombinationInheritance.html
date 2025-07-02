@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        //prototype chaining+constructor stealing
+
+        function SuperType(name){
+            this.name=name;
+            this.colors=["red","blue","green"];
+        }
+
+        SuperType.prototype.sayName=function(){
+            console.log(this.name);
+        }
+
+        function SubType(name,age){
+            SuperType.call(this,name); //constructor stealing
+            this.age=age;
+        }
+
+        SubType.prototype=new SuperType(); //prototype chaining
+
+        SubType.prototype.sayAge=function(){
+            console.log(this.age);
+        }
+
+        var i1=new SubType("Nicolas",29);
+        i1.colors.push("black");
+        console.log(i1.colors);
+        i1.sayName();
+        i1.sayAge();
+
+        var i2=new SubType("RAM",100);
+        console.log(i2.colors);
+        i2.sayName();
+        i2.sayAge();
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

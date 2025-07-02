@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script type="text/javascript">
+
+        //function internals
+
+        //1
+        // function count(arguments[]) arrays implicitly being utilised
+        function count(a,b){
+            console.log(arguments[0]);
+            console.log(arguments[1]);
+            console.log(arguments.length);
+            var c=a+b;
+            console.log(c);
+        }
+        count(10,20);
+
+        console.log("\n");
+        //2
+        function Person(name){ //var name=Axsayy //implict
+            this.getName=function(){ //making it priviledge method
+                return name;
+            }
+            this.setName=function(value){
+                name=value;
+            }
+        }
+        var person=new Person("Axsayy");
+        console.log(person.name); //not work as its private        
+        console.log(person.getName());
+        person.setName("Akshay");
+        console.log(person.getName());
+        
+     </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

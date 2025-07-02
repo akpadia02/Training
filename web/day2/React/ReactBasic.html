@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.7.0/react.js" integrity="sha512-jw5xwED/d4e6x9q10ZuLVHnQ4bRsG5wQPL7jAptgjZJbpYs9qF9Pt8vRLV5ohSOt/jhr6B7fKfALkK/IMIyUmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.7.0/react-dom.js" integrity="sha512-ocEXIZS1zCiWd/ngdugbSKWpoEBEp276o7oqWogajd3GsbAwNmL9kAf2nvtmWhGmvcF8Tlcvli/0ABgAwAxeAQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    <div id="root"></div>
+
+    <script>
+        let h1Element=React.createElement("h1",{id:"header"},"Hello React!");//a obj not part of dom yet //h1 tag, attribute of h1 tag,children
+        let pElement=React.createElement("p",{},"This is paragraph!");
+        let sectionElement=React.createElement("section",{},[h1Element,pElement]);
+        ReactDOM.render(sectionElement,document.getElementById("root"));
+
+        // output-
+        // <div id="root"><section data-reactroot=""><h1 id="header">Hello React!</h1><p>This is paragraph!</p></section></div>
+
+
+
+        //jsx is alter for all above
+        //react dont understand jsx (i support only React.createElement)
+        //jsx need to be compile and parse which then converts to above
+        //js is html represenation of above api
+        //developer understands jsx
+        //so conversion is done by bable (convert js to react api)
+
+
+    </script>
+</body>
+</html>

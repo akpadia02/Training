@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        
+        function f1(){
+            var x=100;
+            with(document.location){//lexical scope  //with statement hijack the scope chain and make in front of scope chain
+                var x=500; //(not hoisted)
+            }
+            console.log(x); //500 [f1(),global]->[with,f1(),global]
+            console.log(document.location);
+        }
+        f1();
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="getData.js"></script>
+    <script>
+        console.log("started");
+        // var result=GetData();
+        // console.log(result);
+        //https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
+        GetData(function(responsePosts,err){//this is callback function (talk to each other) //if donelet me know call me back
+            if(err){
+                console.log(err);
+            }else{
+                console.log(responsePosts);
+            }
+        });
+        console.log("Ended");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

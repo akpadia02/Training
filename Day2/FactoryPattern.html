@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function createPerson(name,age,job){
+            var o=new Object();
+            o.name=name;
+            o.age=age;
+            o.job=job;
+            o.sayName=function(){
+                console.log(this.name);
+            }
+            return o;
+        }
+        var p1=createPerson("Axsayy",21,"Engineer"); //reference scope //p1 has its own scope including name,age,job,sayname
+        var p2=createPerson("Akshay",20,"SRE");
+
+        p1.sayName(); 
+        p2.sayName();
+        console.log(p1.sayName===p2.sayName); //checking if same scope //duplicate methods which has common job
+        console.log(p1.constructor==createPerson); //false
+
+        //x is faster to retrive
+        var x=100;
+        var obj1=new Object();
+        obj1.y=500;
+        console.log(x);
+        console.log(obj1);
+        
+        
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

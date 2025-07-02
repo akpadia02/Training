@@ -1,0 +1,32 @@
+//Web evolution//
+
+//Client-Side DHTML (Dynamic HTML)
+DHTML is not a language but a combination of HTML, CSS, JavaScript, and the DOM to create interactive and animated websites on the client-side (browser).
+
+//Server-Side Applications
+Web pages generated dynamically on the server, using languages like PHP, Java, ASP.NET, Node.js.
+
+//AJAX (Asynchronous JavaScript and XML)
+AJAX allows updating parts of a web page without reloading the whole page, using JavaScript and XMLHttpRequest or fetch().
+✅ Advantages:
+Faster, smoother user experience.
+Reduced server load.
+Partial page updates.
+❌ Disadvantages:
+SEO challenges.
+Complex debugging.
+JavaScript-dependent (may break if JS is disabled).
+
+//HTML5
+HTML5 is the latest HTML version with new semantics, APIs, multimedia support, and form controls.
+
+//CSS3
+CSS3 is the modern version of CSS with support for animations, transitions, media queries, and flexbox/grid layouts.
+
+
+// SPA – Single Page Application//
+A Single Page Application (SPA) is a web application that loads a single HTML page and dynamically updates content without reloading the entire page.
+
+//es6 introduce class
+
+

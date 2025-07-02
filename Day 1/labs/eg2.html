@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+
+        //fucntion declaration hoisting & function expression
+
+        a(); //runs (hoisting)
+        function a(){ //fucntion declaration hoisting
+            console.log("Function is executed");
+        }
+        // a();
+        
+        b(); //(doesnt hoisted) 
+        b=function(){ //in reality function name is anomynous (lacks identifier) (b is identifier knows location of anomynous function) //function expression
+            console.log("Function b executed");
+        }
+        // b(); //identifier b is searched first and execute anomynous function
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+//DOM
+-tree like structure created is DOM
+-in memory represtation of html elements as object in tree
+-easy to manipulate objects
+-doc.getElementbyid is faster or doc.queryselector?
+-react said dont manipulate dom yourself
+-dom manipulation is costly operation that browser does
+-react is lib(prove) (react.js)
+-creating apps using vite
+
+
+
+
+//ReactBasic.html
+-react elements
+-developer will never talk to dom (work with react elements)
+-developer->React Element->Dom elements
+- react dont understand jsx (i support only React.createElement)
+-jsx need to be compile and parse which then converts to above
+-js is html represenation of above api
+-developer understands jsx
+-so conversion is done by bable (convert js to react api)
+-or can use jsx transformer (JSXBasic.html) //https://cdnjs.com/libraries/react/0.14.0-alpha1
+
+
+
+//components
+-they r reusable (not only ui but also business)(ui is comprised of elements)
+-they r composable
+-they r configurable 
+-they r modular
+-they r testable
+-two ways to creact them: function and class based
+-components can have another component into it
+
+
+-u creating individual pages utility provides a way
+-2 utility (create react app) (create vite app)
+-npm create vite@latest my-react-app  (react,js)
+-pacakge.json (contain all dependencies reactapp is having)
+-src:
+    1. main.jsx is starting point 
+    2. bec react is promoting function component app.jsx is function component
+
+
+//props
+-"Props" (short for properties) are inputs passed from a parent component to a child.
+-Used to pass data and event handlers to child components.
+-Read-only: Props cannot be modified inside the child component (they are immutable).
+-Props are how components communicate.
+-Props support dynamic rendering and customization.Must use props.<propertyName> to access inside the child.
+-what if 25 props (then pass prop as object)
+-prop are properties of that object

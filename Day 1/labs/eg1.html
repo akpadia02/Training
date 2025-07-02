@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        //hoisting
+        if(true){ //non lexical scope //conditional statements
+            var x=10; //hoisting
+        }
+        console.log(x);  //output:10  
+
+
+        function abc(){//lexical //function and objects
+            var y=50; //no hoisting
+        }
+        abc();
+        console.log(y); //output: undefined
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

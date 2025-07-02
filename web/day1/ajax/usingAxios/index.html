@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="getData.js"></script>
+    <script>
+        //https://axios-http.com/docs/intro
+        //Axios is a promise-based HTTP Client for node.js and the browser. 
+        // It is isomorphic (= it can run in the browser and nodejs with the same codebase). 
+        // On the server-side it uses the native node.js http module, while on the client (browser) it uses XMLHttpRequests.
+        console.log("Started");
+        var aPromise=GetData();
+        aPromise.then(function(responsePosts){
+            console.log("promise resolved");
+            console.log(responsePosts);
+        },function(err){
+            console.log("promise rejected");
+            console.log(err); 
+        })
+        console.log("Ended");
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

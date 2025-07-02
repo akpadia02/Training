@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        //refered by value & refered by reference
+
+        var x=500; //primitive always called as refered by value
+        y=x; //refered by value (only one time)
+        console.log(x); //500
+        console.log(y); //500
+        
+        x=1000;
+        console.log(y); //500
+        console.log(x); //1000
+
+
+        obj1=new Object(); //refernce always called as refered by reference (Scope common: heap)
+        obj1.a=250;
+        obj2=obj1;
+        console.log(obj1.a); //250
+        console.log(obj2.a); //250
+
+        obj1.b=750; //effects heap therefore shared reference affected
+        console.log(obj1.b); //750
+        console.log(obj2.b); //750
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

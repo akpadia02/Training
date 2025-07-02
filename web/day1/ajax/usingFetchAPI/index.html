@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //alternate to xhr
+
+        //promise .then()
+        // var aPromise=fetch("https://jsonplaceholder.typicode.com/posts"); //no need of cdn 
+        // aPromise.then(function(responsePosts){
+        //     console.log(responsePosts); //body: ReadableStream 
+        //     let dataPromise=responsePosts.json(); //reading is asynchronous
+        //     dataPromise.then(posts=>console.log(posts));
+        // })
+
+        //async and await
+        // async function LoadData() { //no need to write .then()
+        //     try{
+        //         var responsePosts = await fetch("https://jsonplaceholder.typicode.com/postss"); //if type then fetch api wont reject (only no network then fetch api fails) ok:false
+        //         console.log(responsePosts);
+        //         let posts=await responsePosts.json(); //promise there again await then resolve which gives data
+        //         console.log(posts);
+        //     }catch(error){
+        //         console.log("Error");
+        //         console.log(error);
+        //     }
+        // }
+
+        async function LoadData() { //no need to write .then()
+            try{
+                var responsePosts = await fetch("https://jsonplaceholder.typicode.com/posts"); //if type then fetch api wont reject (only no network then fetch api fails) ok:false
+                console.log(responsePosts);
+                if(responsePosts.ok){
+                    let posts=await responsePosts.json(); //promise there again await then resolve which gives data
+                    console.log(posts);
+                }else{
+                    throw new Error("Something went wrong!");
+                }  
+            }catch(error){
+                console.log("Error");
+                console.log(error);
+            }
+        }
+        //any method that return promise means use await
+        LoadData();
+        //body: ReadableStream 
+        //not directly readable 
+        //if want actaul data then use methods like .json and it return a promise 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //https://www.jsv9000.app/
+
+
+        // console.log("Started");
+        // var aPromise=new Promise(function(resolve,reject){
+        //     resolve("success");
+        // });
+        // aPromise.then(function(msg){
+        //     console.log(msg);
+        // });
+        // setTimeout(function(){
+        //     console.log("this is exceucted after 1sec");
+        // },1000);
+        // console.log("Ended");
+
+        //started, ended, success ,this is exceucted after 1sec
+        console.log("\n");
+        
+        console.log("Started");
+        setTimeout(function(){
+            console.log("this is exceucted after 0sec");
+        });
+        var aPromise=new Promise(function(resolve,reject){
+            resolve("success");
+        });
+        aPromise.then(function(msg){
+            console.log(msg);
+        });
+        
+        console.log("Ended");
+        //started, ended, success ,this is exceucted after 0sec
+
+
+        //microtask queue: promise resolve or reject call back entry is made in this queue
+        //https://www.jsv9000.app/
+        //set time out is not exact time out ,it is minimum time out
+        //both micro & task have entries , then micro task takes step as promise has high priority, microtask are given high preference till all entries of it dequeue then task queue.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

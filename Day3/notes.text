@@ -1,0 +1,26 @@
+Aysmtotic notation
+-BigO: Worst
+-Theta: Average
+-Omega: Best
+-why constants ignore? (constants are already taken care in defination)
+-O(n) f(n)=3n+100 O(g(n)) f(n)<=g(n) n>n0 & c (n0=100 c=4) As n becomes very large, the +100 becomes negligible compared to 3n.Also, multiplying by 3 (a constant) does not change the fundamental growth pattern.
+-Average c1g(n)<=f(n)<=c2g(n)
+-Omega c1g(n)<=f(n)
+-Complexity Works in real time? yes
+
+-2sum
+-101 Balls(find lighter or heavier), 9balls(find the heavier ball), 3bulbs & 3 switches
+-duplicate number array
+-2 rope burn 45min
+-jug and water Ai (3l 5l , to find 4l)
+
+
+
+
+
+///
+-Fibo
+-factorial
+-climbing stairs
+-tower of honoi
+-for a given n (no of bits) create a sequence of binary patterns (0000... to 1111..)

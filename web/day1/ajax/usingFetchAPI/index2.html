@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //DOM manipulation
+        async function LoadData() { 
+            try{
+                var responsePosts = await fetch("https://jsonplaceholder.typicode.com/posts"); 
+                console.log(responsePosts);
+                if(responsePosts.ok){
+                    let posts=await responsePosts.json(); 
+                    // console.log(posts);
+                    var list=document.getElementById("postList");
+                    for(const post of posts){
+                        var newListItem=document.createElement("li");
+                        newListItem.innerHTML=post.title;
+                        list.appendChild(newListItem);
+                    }
+                }else{
+                    throw new Error("Something went wrong!");
+                }  
+            }catch(error){
+                console.log("Error");
+                console.log(error);
+            }
+        }
+        LoadData();
+    </script>
+</head>
+<body>
+    <ul id="postList">
+
+    </ul>
+</body>
+</html>

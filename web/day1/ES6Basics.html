@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //var let const 
+
+        //spread operator- object and array level
+
+        //array
+        var cars=["BMW","Audi","MERC"];
+        var moreCars=["TATA","MAHINDRA"];
+        //merge above both arrays
+        var allCars=[...cars,...moreCars];
+        console.log(allCars);
+
+
+        //object
+        var person={name:"Akshay",age:21,sports:"Cricket"};
+        var player={...person,sports:"Hockey"}; //left to right associativity (last one wins) 
+        var player1={sports:"Hockey",...person} 
+        // console.log(player); ///{name: 'Akshay', age: 21, sports: 'Hockey'}
+        console.log(player1); //{sports: 'Cricket', name: 'Akshay', age: 21}
+
+
+
+        //Destructuring - arrays & objects
+        //arrays
+        var cars=["BMW","Audi","MERC"];
+        // var firstCar,secondCar;
+        // firstCar=cars[0];
+        // secondCar=car[1];
+        //or
+        var [firstCar,secondCar]=cars;
+        console.log(firstCar);
+        console.log(secondCar);
+        var [first,,third,fourth]=cars;
+        console.log(first);
+        console.log(third);
+        console.log(fourth);
+        
+        // var person={name:"Akshay",age:21,sports:"Cricket"};
+        // function printPlayer(p){
+        //     p.name="raj"
+        //     console.log(p.name+" playes "+p.sports);
+        // }
+        // printPlayer(person);
+
+        //objects
+        // var name=person.name;
+        // var sports=person.sports;
+        //or
+        var {name,sports}=person; //presence of attribute is imp
+         function printPlayer({name,sports}){
+            console.log(name+" playes "+sports);
+        }
+        printPlayer({name,sports});
+        var {Name="RAM",name,sports}=person;
+        console.log(Name);
+
+
+        var player2={
+            name:"Chris",
+            age:30,
+            details:{
+                isSeeded: true,
+                worldRanking: 2,
+                sports:"Tennis",
+            },
+        };
+        // var worldRanking=player2.details.worldRanking;
+        //or
+        var {details:{worldRanking}}=player2;
+        console.log(worldRanking);
+        
+
+        //using alias
+        //var {name,sports}=person;
+        var per={fname:"Akshay",age:21,sports:"Cricket"};
+        var {fname:FullName,sports}=per;
+        console.log(FullName);
+        //console.log(fname); //error
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

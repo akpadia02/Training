@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function createPerson(name,age,job){
+            this.name=name;
+            this.age=age;
+            this.job=job;
+            this.sayName=function(){
+                console.log(this.name);
+            }
+        }
+        var p1=new createPerson("Axsayy",21,"Engineer"); 
+        var p2=new createPerson("Akshay",20,"SRE");
+
+        p1.sayName(); //p1 has its own scope as well as p2
+        p2.sayName();
+        console.log(p1.sayName===p2.sayName); //duplicate method //false 
+
+        console.log(p1 instanceof Object); //true
+        console.log(p1 instanceof createPerson); //true
+        
+        console.log(p1.constructor==createPerson); //true //new keyword- constructor
+        
+
+        
+        
+        
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

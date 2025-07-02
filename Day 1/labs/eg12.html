@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        //Garbage collection
+
+        //internet explorer version 6- reference counting
+
+        obj1=new Object();
+        obj2=obj1;
+        //obj1=null; //if using ie6 and pointing to null is important before deleting
+        delete obj1; // if reference counting was happening then as obj2=obj1 which means obj1 has a referring so cant delete  //mark
+        console.log(typeof obj1);
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

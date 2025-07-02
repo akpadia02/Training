@@ -1,0 +1,9 @@
+typescript
+-superset of JavaScript
+-microsoft (open sourse)
+-strongly type
+-it is development time entity (cannot use at runtime) (browser dont understand and Executes) (typescript is not meant to run its meant to compile)
+-compile ts to js (we create .ts file which converted to .js by using tsc.exe typescript complier)
+-use as to have less error
+-how to have tsc ready =>npm i typescript (node must be installed) node --version (-g for global entire machine)
+-check if installed tsc -v

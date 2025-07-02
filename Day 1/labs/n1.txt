@@ -1,0 +1,81 @@
+#es3
+
+//eg1.html
+-hoisting & non lexical scope
+-global scope (window) - lexical and non lexical scope
+-non lexical: conditional statements
+-var statement in non lexical do hoisting (var ends in window)
+-anti partern
+-lexical: function and objects
+-var statement in non lexical not do hoisting
+-hoisting: putting something from nls to global scope window.
+
+//eg2.html
+-two types of fucntions declaring 
+-function declaring hoisting (avoid)
+-function expression (not hoisted) //not necessary anomynous
+
+//eg3.html
+-3 scope: window,changecolor,swapcolor
+-search from narrow scope to wider 
+-array of search scope is SCA (scope chain augmentation)
+-very first scope is scope chain is referred as activation object
+-window is least priviledge (along will priviledge comes memory consumption)
+
+
+//eg4.html
+-primitive (number,string) cant be extexted (cant store) (lack scope) (no scope=no store)
+-reference (function & objects) can be extexted (can store) (has scope) 
+
+//eg5.html
+-refered by value & refered by reference
+-primitive always called as refered by value (y=x)
+-refernce always called as refered by reference (Scope common shared memory: heap) (obj11=obj2)
+
+//eg6.html
+-with statement hijack the scope chain and make in front of scope chain
+-making it self as activation object.
+
+
+//eg7.html
+-var statement is private
+-function arguments are private
+-this keyword makes it priviledge (making avilable only to instances of function)
+-public means dumping to window
+- {} is constructor
+- new uses constructor pattern
+
+//eg8.html
+-function internals = arguments
+-arguments: arrays implicitly being utilised
+-priviledge method lives in same scope of as that of private entity and exposes the private entities limited to the instances
+
+//eg9.html
+-writing function is not same as exceuting it
+-every value in array index store function contruct
+-iife and fe (immediately accessed function expression)
+
+//eg10.html
+-closure: nested function declaration
+-this keyword changes search pattern ie jumping to window
+-this keyword under closure points to last scope where last idetifier was found
+-Absolute scope: Global variables accessible anywhere.
+-Relative scope: Variables accessible only within their defining function or block.
+
+//eg11.html
+-Recusion: functions tries to recall its self
+-null is used to derefercing
+-why derefercing? : used in garbage collection
+-two techniques gc: mark and sweep , refernce counting
+
+//eg12.html
+-garbage collection
+- Concept: Reference Counting (Used in IE6)
+-In reference counting, an object is only garbage collected when no variables refer to it.
+-So if two variables refer to the same object (obj1, obj2), and you do obj1 = null, the object is not collected, because obj2 still points to it.
+-You must break all references before the object is eligible for collection.
+-Concept: Mark-and-Sweep (Modern Browsers)
+-In modern JavaScript engines (like Chrome, Firefox, Edge), mark-and-sweep is used.
+-Objects that are no longer reachable from the root (window or global scope) are marked and collected.
+-No need to manually delete or null variables unless you really want to release memory early.
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function createFunctions1(){
+            var result=new Array();
+
+            for(var i=0;i<10;i++){
+                result[i]=function(){ //function expression every array store function contruct
+                    return i;
+                }
+            }
+            return result;
+        }
+        var funcs=createFunctions1();
+        
+        for(var i=0;i<funcs.length;i++){
+            document.write(funcs[i]()+"<br/>") //() as function contructor is used which is executed very late
+        }
+        //printing 10 ten times
+
+        document.write("<br/>")
+        //correcting
+        function createFunctions(){
+            var result=new Array();
+
+            for(var i=0;i<10;i++){
+                result[i]=function(i){ //function expression every array store function contruct
+                    return i;
+                }
+                (i);
+            }
+            return result;
+        }
+        var funcs=createFunctions();
+        
+        for(var i=0;i<funcs.length;i++){
+            document.write(funcs[i]+"<br/>") //() as function contructor is used which is executed very late
+        }
+        
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

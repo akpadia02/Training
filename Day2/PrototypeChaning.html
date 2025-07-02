@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function SuperType(){ //prototype{getSuperValue}
+            this.property=true;
+        }
+        SuperType.prototype.getSuperValue=function(){
+            return this.property;
+        }
+        function SubType(){ //prototype{}
+            this.subproperty=false;
+        }
+        //inherit from superType
+        SubType.prototype=new SuperType(); //prototype chaining
+
+
+        //object little notation
+        // SubType.prototype={   //breaks prototype chain (not assign values to subtype as it will not search supertype)mutating the prototype after Chaining breaks the Chaining.
+        //     getSubValue: function(){
+        //         return this.subproperty;
+        //     },
+        //     someOtherMethod: function(){
+        //         return false;
+        //     }
+        // }  
+        //to correct above initialisation of prototype should be done first then prototype chaining
+        i1=new SubType(); //[i1,subtype.prototype,superType.prototype]
+        i1.x=function(){
+            return "i1.x"
+        }
+        SubType.prototype.x=function(){
+            return "x";
+        }
+        console.log(i1.x); //i1.x
+        
+        // SubType.prototype.getSuperValue=function(){
+        //     return this.subproperty;
+        // }
+
+        var instance=new SubType();
+        console.log(instance.getSuperValue()); //false
+        
+        console.log(instance instanceof Object); //true
+        console.log(instance instanceof SubType); //true
+        console.log(instance instanceof SuperType); //true
+
+        console.log(Object.prototype.isPrototypeOf(instance)); //true
+        console.log(SubType.prototype.isPrototypeOf(instance)); //true
+        console.log(SuperType.prototype.isPrototypeOf(instance)); //true
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

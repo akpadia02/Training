@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function Person(){ //prototype{name,age,job,sayName()} implicit created
+
+        }
+        // Person.name="Akshay" //for storing in constructor 
+        Person.prototype.name="Akshay"; //increasing time and latency
+        Person.prototype.age=22;
+        Person.prototype.job="SRE";
+        Person.prototype.sayName=function(){
+            console.log(this.name);
+        }
+
+        var p1=new Person(); //[p1(construtor empty),Person.prototype]
+
+        // p1.sayName=function(){
+        //     console.log("sayname from instance is invoked");
+        // }
+        p1.name="Axayy"
+        p1.sayName(); //Axayy 
+
+        var p2=new Person(); //[p2(construtor empty),Person.prototype]
+        p2.sayName(); //Akshay
+
+        console.log(p1.sayName===p2.sayName);  //true  //both in Person.prototype //no duplication
+
+        console.log(Person.prototype.isPrototypeOf(p1)); //true
+        console.log(Person.prototype.isPrototypeOf(p2)); //true
+
+        //only works if Object.getPortotypeOf() is available
+        if(Object.getPrototypeOf){
+            console.log(Object.getPrototypeOf(p1)==Person.prototype); //true
+            console.log(Object.getPrototypeOf(p1).name); //Akshay
+        }
+
+        console.log('\n');
+        
+        //////////
+        function myDate(){
+            this.getMinutes=function(){
+                console.log("report min");
+            }
+            this.getHours=function(){
+                console.log("report hour");
+            }
+            this.getSeconds=function(){
+                console.log("report sec");
+            }
+        }
+        var d=new myDate(); //d contain constructor as static clone (copy of priviledge entires goes in d) //d scope
+        d.getMinutes(); //invoking only one method in d but has clone of all
+        var e=new myDate();//e scope same as d
+        e.getMinutes();
+
+
+        //js keep all thses methods in prototype as solution
+        function myDate1(){
+
+        }
+        myDate1.prototype.getMinutes=function(){
+            console.log("p report min");
+        }
+        myDate1.prototype.getHours=function(){
+            console.log("p report hour");
+        }    
+        myDate1.prototype.getSeconds=function(){
+             console.log("p report sec");
+        }
+        var d=new myDate1(); //retrive from protoptye
+        d.getMinutes(); //invoking only one method 
+        var e=new myDate1();
+        e.getMinutes();
+        console.log(typeof myDate1.prototype.getHours); //function
+
+
+        console.log('\n');
+        //adding own method in string prototype (native)
+        console.log(typeof Array.prototype.sort);
+        console.log(typeof String.prototype.substring);
+
+        String.prototype.startsWith=function(text){
+            return this.indexOf(text)==0;
+        }
+        var msg="Hey World!";
+        console.log(msg.startsWith(msg));
+        
+        
+        
+        console.log('\n');
+        // Person.prototype.name="Akshay"; //increasing time and latency //search prototype 4 times
+        // Person.prototype.age=22;
+        // Person.prototype.job="SRE";
+        // Person.prototype.sayName=function(){
+        //     console.log(this.name);
+        // }
+        //search prototype once
+
+        //var f=new Person();  
+         
+        Person.prototype={
+            constructor: Person,
+            name: "Akkkk",
+            age:22,
+            job:"SRE",
+            sayName:function(){
+                console.log(this.name);
+            }
+        }
+        var f=new Person(); //[f,Person.prototype,global]
+        console.log(f.name);
+        
+        //BUT 
+        console.log(f instanceof Object); //true
+        console.log(f instanceof Person); //true
+        console.log(f.constructor==Person); //false we use new=Person ie it should have been true but bec of search prototype once type its false
+        //there advantage is performance
+        // and disadvatage is not coming constructor (ie nuiance in language) solution add code and report as true
+        //constructor: Person
+
+        
+        console.log('\n');
+        Person.prototype.sayHi=function(){
+            console.log("Hi");
+        }
+        f.sayHi();
+
+        //prototype is dynamic refernce u can add on references later on
+        
+
+
+        //hasOwnProperty
+        //HasPrototypeProperty
+
+        function hasPrototypeProperty(object,name){
+            return !object.hasOwnProperty(name) && (name in object);
+        }
+        console.log(hasPrototypeProperty(f,"name"));
+
+
+
+        console.log('\n');
+
+        function Person1(){
+
+        }
+
+        //one should not store reference types in prototype (allows that is only common method)
+        Person1.prototype={
+            name:'Nicholas',
+            age:29,
+            Job:"SE",
+            friends:["Shelby","Court"], //reference datatypes should not be stored in prototypes because it will change the 
+            sayName:function(){
+                console.log(this.name);
+            }
+        }
+        var f1=new Person1();
+        var f2=new Person1();
+        f1.friends.push("Van");
+        console.log(f1.friends);
+        console.log(f2.friends);
+
+        //solution : contructor protopattern
+        function Person2(name,age,job){
+            this.name=name;
+            this.age=age;
+            this.job=job;
+            this.friends=["Shelby","Court"];
+        }
+        Person2.prototype={
+            constructor:Person2,
+            sayName:function(){
+                console.log(this.name);
+            }
+        }
+        var f3=new Person2("Nicolas",29,"SE");
+        var f4=new Person2("Greg",27,"Doctor");
+        f3.friends.push("Van");
+        console.log(f3.friends);
+        console.log(f4.friends);
+
+
+        console.log('\n');
+
+        //every class is itself a function
+        //constructor ahs speicific section
+        //outside constuctor is nothing but prototypes
+        class Rectangle{
+            getDetails = function(){
+                console.log("share some details");
+            }
+            constructor(length, width){
+                this.length = length;
+                this.width = width;
+            }
+            
+        }
+        i1=new Rectangle();
+        i1.getDetails();
+        // console.log(Rectangle.isPrototypeOf(i1));
+        
+    </script> 
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

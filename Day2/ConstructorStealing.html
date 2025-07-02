@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // function SuperType(){
+        //     this.colors = ["red", "blue", "green"];
+        // }
+        // function SubType(){}
+        // SubType.prototype=new SuperType();
+        // var i1 = new SubType();
+        // i1.colors.push("black");
+        // console.log(i1.colors);//"red", "blue", "green", "black"
+        // var i2 = new SubType();
+        // console.log(i2.colors);// "red", "blue", "green", "black"
+
+
+        //pc has a problem
+        //cant define references type in contructor as well as in protoype
+        //solution: ConstructorStealing
+        function SuperType(){
+            this.colors = ["red", "blue", "green"];
+        }
+        function SubType(){
+            //inherit from super Type
+            SuperType.call(this); //goes to supertype constructor and clone it and make a copy for it (without making instannce of supertype this is ConstructorStealing)
+        }
+
+        //internal implementation of super
+        // function SubType(){
+        //     var i1=new SuperType();
+        //     return i1;
+        // }
+        var i1 = new SubType();
+        i1.colors.push("black");
+        console.log(i1.colors);//"red", "blue", "green", "black"
+        var i2 = new SubType();
+        console.log(i2.colors);// "red", "blue", "green"
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

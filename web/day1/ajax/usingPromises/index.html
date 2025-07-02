@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="getData.js"></script>
+    <script>
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+        //A Promise is a proxy for a value not necessarily known when the promise is created. 
+        // It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. 
+        // This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, 
+        // the asynchronous method returns a promise to supply the value at some point in the future.
+        console.log("Started");
+        var aPromise=GetData();
+        aPromise.then(function(responsePosts){//registering 2 callback //waiting for promise to resolve or reject 
+            console.log(responsePosts);
+            //DOM
+        },function(err){
+            console.log(err); 
+        })
+        console.log("Ended");
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        
+        function Person(){ //lexical no hoisting private
+            var z=100; //not available outside function //private
+            this.x=100 //priviledge
+            this.y=200;
+        }
+        var inst1=new Person();  //inst1-refernce type
+        //  meaning of line 13 
+        // inst1{
+        //     this.x=100 //priviledge
+        //     this.y=200;
+        // }
+        console.log(inst1.z); //undefined 
+        console.log(inst1.y); //200
+        console.log(y); // y is not defined
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

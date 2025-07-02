@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.7.0/react.js" integrity="sha512-jw5xwED/d4e6x9q10ZuLVHnQ4bRsG5wQPL7jAptgjZJbpYs9qF9Pt8vRLV5ohSOt/jhr6B7fKfALkK/IMIyUmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.7.0/react-dom.js" integrity="sha512-ocEXIZS1zCiWd/ngdugbSKWpoEBEp276o7oqWogajd3GsbAwNmL9kAf2nvtmWhGmvcF8Tlcvli/0ABgAwAxeAQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-alpha1/JSXTransformer.js" integrity="sha512-OYvlwKxEdSPuJh9OXuDc9GqW6VL1CF2WUpbb91sjc+uPkQKR86Xj5WHvncjFHJlV37P5Jhck6uvhXXNEFqOLzg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="root"></div>
+    <!-- or can use jsx transformer (JSXBasic.html) -->
+
+    <script type="text/jsx">
+        var sectionElement=(
+            <section>
+                <h1>Hello React!</h1>
+                <p>This is a para!</p>
+            </section>
+        );
+        ReactDOM.render(sectionElement,document.getElementById("root"));
+    </script>
+</body>
+</html>

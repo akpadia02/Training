@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        var name="The Window";
+        var object={
+            name:"My Object",
+            getNameFunc: function(){
+                return function(){
+                    return this.name; //[anymonous,getNameFunc,object,window] but this keyword changes search pattern ie jumping to window
+                }
+            },
+            getNameFunc1: function(){
+                var x=this; //x lives in one scope (ie relative) and this lives all scope (ie absoulte) //this here points to getNameFun1 and start searching for name
+                return function(){
+                    return x.name; //[anymonous,getNameFunc,obj]  to force start serach localy
+                }
+            }
+        }
+        console.log(object.getNameFunc()()); //[log(window)]
+        console.log(this.name);
+        console.log(object.getNameFunc1()());
+        
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
