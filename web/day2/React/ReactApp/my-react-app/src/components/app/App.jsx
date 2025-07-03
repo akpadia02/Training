@@ -5,21 +5,23 @@ import ListOfCourses from "../listofcourses/listofcourses";
 import Posts from '../posts/posts';
 
 function App() {
-  // return <ListOfCourses />;
-  // return <Posts />
-    // return (
-    //   <div>
-    //   {/* <FMessage msg="God"/>
-    //   <FMessage msg="Hello"/>
-    //   <FMessage msg="dhhihoehoeh"/> */}
-    //   <Counter />
-    // </div>
-    // )
+  // return (
+  //   <div>
+  //   {/* <FMessage msg="God"/>
+  //   <FMessage msg="Hello"/>
+  //   <FMessage msg="dhhihoehoeh"/> */}
+  //   <Counter />
+  // </div>
+  // )
 
-    return (
-      // <ListOfCourses/>
-      <Posts />
-    )
+  return (
+    <div>
+      <ListOfCourses />
+      <Counter />
+       {/* <Posts /> */}
+    </div>
+
+  )
 }
 
 export default App;

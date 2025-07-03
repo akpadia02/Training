@@ -186,6 +186,14 @@ function component
 
 
 
+//routing
+-something with change in url 
+-router,routes(having url and component that need to be instantiated)
+-dynamic instantiation
+-client side
+-npm i react-router-dom
+
+
 
 
 
