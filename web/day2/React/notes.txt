@@ -95,3 +95,31 @@ fontawesome: icons
 -You cannot modify the original state object directly.
 -Always use this.setState() to update state:this.setState({ curLikes: this.state.curLikes + 1 });
 -Updating state triggers re-render of the component.
+-how react understand how to update ui?(each time state changes render  method for that component is call )
+
+
+//virtual dom
+-When the render() method is called for the first time, React creates an in-memory representation of the UI elements (from JSX) — called the Virtual DOM.
+-On every state or prop change, a new Virtual DOM is created.
+-React uses a diffing algorithm to compare the new Virtual DOM with the previous one.
+-This process identifies what has changed (difference between the two virtual DOM trees).
+-React then updates only the changed parts in the actual DOM — improving performance.
+-This selective update is known as Reconciliation.
+-As a result, React avoids full DOM reloads, leading to faster and more efficient UI updates.
+
+-how does react identity which element to remove of?
+  -Role of key Prop:
+    Each element in a list should have a unique key prop.
+    Keys help React identify which items have changed, been added, or been removed.
+    Without a key or with incorrect keys (like array indices), React may:Update the wrong element,Cause unexpected re-renders,Misidentify which element to remove or update
+  -Removal Logic:
+    If a key from the old Virtual DOM does not exist in the new Virtual DOM
+    React knows that element has been removed, so it deletes it from the real DOM.
+  -Efficient Update:
+    React only updates the minimal set of DOM nodes, thanks to key-based tracking.
+    {items.map(item => (
+        <li key={item.id}>{item.name}</li>
+    ))}
+
+
+

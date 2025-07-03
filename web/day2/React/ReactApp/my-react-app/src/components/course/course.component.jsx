@@ -61,6 +61,7 @@ export default class Course extends Component {
   };
 
   render() {
+    // console.log("within course");
     return (
         <div className="col-md-3 my-1">
       <div className="card">
