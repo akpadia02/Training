@@ -123,3 +123,47 @@ fontawesome: icons
 
 
 
+
+
+
+/// 
+function component
+-class is older version
+-why functional component? it is a lighted weighted way of creating component. 
+-first version of fc dont support state data
+-version 16.8 new feature introduce (HOOKS)
+-lighted weighted? functional component has less foot prints. (bundle size is less as cbc)
+-no need of render method in fc (it will implicity implemented by react)
+
+-Functional components (FC) are a modern, lightweight way to create React components.
+-Class components (CC) are the older approach and require more boilerplate.
+-FCs are JavaScript functions that return JSX.
+-Why Functional Components?
+  Simpler syntax – no need for this, constructor, or render() method.
+  Lightweight – FCs have smaller footprint and lower bundle size than class-based components.
+  Better readability and easier testing.
+-State in Functional Components
+  Originally, FCs were stateless — they couldn’t manage state or lifecycle.
+  React v16.8 introduced Hooks, which added:useState – for managing state,useEffect – for lifecycle-like behavior and more
+
+
+//states in FC
+-Hooks are functions introduced in React v16.8 to enable state and lifecycle in functional components.
+-useState() is the hook used to create and manage state.
+-const [count, setCount] = useState(100);
+  count → State variable (holds the current value)
+  setCount → Function to update the count state
+  useState(100) returns an array of two elements:const count = useState(100)[0];       // current state value
+  const setCount = useState(100)[1];    // function to update state
+-useState() must be called at the top level of the component (not inside loops or conditions).
+-Updating state via setCount() causes re-render of the component.
+-State is preserved across renders, unlike normal variables.
+-You can use multiple useState() calls to manage multiple state variables.
+
+
+
+
+
+
+
+
