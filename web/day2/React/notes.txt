@@ -53,7 +53,7 @@
 -what if 25 props (then pass prop as object)
 -prop are properties of that object
 
-
+.....................................................................................
 //
 -rendor should return 
 
@@ -79,3 +79,19 @@
 ///
 fontawesome: icons
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+/////
+//states
+-Props are read-only in React – used to pass data from parent to child.
+-To reflect dynamic changes in the UI, React uses state.
+-React handles data in two ways:
+-Props – for parent-to-child communication.
+-State – for component-level internal data.
+-State represents the current snapshot of an entity (e.g., likes, input values).
+-State is defined within a component, typically like: this.state = { curLikes: 100 };   state={curLikes:this.props.coursedetails.likes};
+ To access state in JSX:{this.state.curLikes}
+-State is immutable – similar to Java’s String:
+-You cannot modify the original state object directly.
+-Always use this.setState() to update state:this.setState({ curLikes: this.state.curLikes + 1 });
+-Updating state triggers re-render of the component.
