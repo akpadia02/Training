@@ -5,6 +5,7 @@ import ListOfCourses from "../listofcourses/listofcourses";
 import Posts from '../posts/posts';
 import {BrowserRouter,Routes,Route,Link} from 'react-router-dom'
 import CourseDetails from '../course/CourseDetails';
+import Navbar from '../Navbar';
 
 function App() {
   return (
@@ -14,9 +15,10 @@ function App() {
     <a href='/counter'>Counter </a> 
     above reloads the page aaianst spa solution is link */}
 
-     <Link to='/'>Courses </Link> | {" "}  
+     {/* <Link to='/'>Courses </Link> | {" "}  
     <Link to='/posts'>Posts </Link> |  {" "}
-    <Link to='/counter'>Counter </Link> 
+    <Link to='/counter'>Counter </Link>  */}
+      <Navbar />
       <Routes>
         <Route path='/' element={<ListOfCourses/>}/>
         <Route path='/posts' Component={Posts}/>

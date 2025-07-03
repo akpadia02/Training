@@ -201,6 +201,22 @@ function component
     </BrowserRouter>
 -a tag and link?
 -useNavigate
+-Routing means changing the content shown based on the URL path.
+-In React, this is done using the React Router DOM library.
+-It enables client-side routing (without full-page reloads).
+  <BrowserRouter>
+  Wraps your app to enable routing (uses HTML5 history API).
+
+  <Routes>
+  Container for all route definitions.
+
+  <Route path='...' element={<Component />}/>
+  Defines a path and which component to show for that path.
+
+  Dynamic Instantiation:
+  When the path changes, the corresponding component is instantiated dynamically.
+-npm install react-router-dom
+
 
 
 
@@ -208,6 +224,7 @@ function component
 //utility: json-server
 -npm install json-server
 -dummy server
+-json-server src/db/course.json --port 3500
 
 
 
