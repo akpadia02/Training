@@ -188,10 +188,28 @@ function component
 
 //routing
 -something with change in url 
--router,routes(having url and component that need to be instantiated)
+-router,routes,(having url and component that need to be instantiated),links,BrowserRouter
 -dynamic instantiation
 -client side
 -npm i react-router-dom
+-<BrowserRouter>
+      <Routes>
+        <Route path='/' element={<ListOfCourses/>}/>
+        <Route path='/posts' Component={Posts}/>
+        <Route path='/counter' Component={Counter}/>
+      </Routes>
+    </BrowserRouter>
+-a tag and link?
+-useNavigate
+
+
+
+
+//utility: json-server
+-npm install json-server
+-dummy server
+
+
 
 
 

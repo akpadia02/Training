@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 
 function Course(props) {
+    const navigate = useNavigate();
+    const goTo = () => {
+        navigate("/courseDetails"); // navigates to /about
+    };
     const [likes,setLikes]=useState(props.coursedetails.likes);
     function incrementLikes(){
         setLikes(likes+1);
@@ -48,7 +53,8 @@ function Course(props) {
     return (
         <div className="col-md-3 my-1">
             <div className="card">
-                <img src={props.coursedetails.imageUrl} className="card-img-top" alt="..." style={{ height: "200px" }} />
+                <Link to="/courseDetails"><img src={props.coursedetails.imageUrl} className="card-img-top" alt="..." style={{ height: "200px" }} /></Link>
+                {/* <img src={props.coursedetails.imageUrl} className="card-img-top" alt="..." style={{ height: "200px" }} onClick={goTo} /> */}
                 <div className="card-body">
                     <h1>{props.coursedetails.title}</h1>
                     <p> <i className="fa-solid fa-indian-rupee-sign"></i> {props.coursedetails.price}</p>
