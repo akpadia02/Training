@@ -52,3 +52,30 @@
 -Props support dynamic rendering and customization.Must use props.<propertyName> to access inside the child.
 -what if 25 props (then pass prop as object)
 -prop are properties of that object
+
+
+//
+-rendor should return 
+
+
+//bootstrap
+-it is  a toolkit
+-gives components
+-here we gonna use only for styling
+-Build fast, responsive sites with Bootstrap
+-Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.
+-css (index.css) <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css" integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+-layout-grid(divide into 12)....component-cards
+
+
+
+
+///////
+-div: is called block level element (dont allow come after)
+-flex:
+
+
+
+///
+fontawesome: icons
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
