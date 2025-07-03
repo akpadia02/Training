@@ -159,6 +159,33 @@ function component
 -Updating state via setCount() causes re-render of the component.
 -State is preserved across renders, unlike normal variables.
 -You can use multiple useState() calls to manage multiple state variables.
+-hooks cant be used in cbc
+
+
+//useEffect in FC
+-it is always called after rendering-useEffect() is a lifecycle hook used in functional components.
+-It is always called after the component renders (like componentDidMount, componentDidUpdate, componentWillUnmount in class components).
+-It is used for side effects like:API calls (AJAX),DOM manipulation,Setting up subscriptions,Event listeners,Timers
+-Runs after every render by default.
+  To run only once (on mount), pass an empty dependency array [].
+  If you pass dependencies (like [count]), it runs only when those values change.
+  useEffect is called after every render.
+  =Run Once on Mount:
+  useEffect(() => {
+    console.log("Component mounted");
+  }, []);
+  =Run When count Changes:
+  useEffect(() => {
+    console.log("Count changed to", count);
+  }, [count]);
+  =Cleanup (e.g., removing interval):
+  useEffect(() => {
+    const id = setInterval(() => console.log("Running..."), 1000);
+    return () => clearInterval(id); // cleanup
+  }, []);
+
+
+
 
 
 
