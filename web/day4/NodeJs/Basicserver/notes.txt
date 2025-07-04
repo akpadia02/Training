@@ -32,3 +32,5 @@ if (req.url == "/") {
 -nestjs is farmework on top of express
 -rewrite all by using express
 -npm init -y
+-npm install express --save
+npm i nodemon -g (allow too dont restart server again and again)
