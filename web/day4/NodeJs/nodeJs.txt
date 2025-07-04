@@ -20,3 +20,9 @@ nodeis running means what?
 
 
 repel(read evaulte print loop)(running event loop)
+
+
+client requested server. what does server does that?
+-generating response means: sends content of physical file and that is server should have access to read content of file
+-after reading content server needed to stream back file as response
+-for that we use fs modules (have methods to read content of files)

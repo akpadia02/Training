@@ -13,3 +13,6 @@ package.json
 -dependencides needed
 (npm init -y)
 -type:modules in package.json
+
+
+
