@@ -28,3 +28,20 @@ The function signature is:
 express.static(root, [options])
 app.use(express.static('../client'));
 app.use(express.static(path.join(__dirname, '../client')));
+
+
+//Thunder Client extenstion 
+-just like postman
+
+-post (body that needed to post) (header content type)
+app.post('/newProduct', (req, res) => {
+    const payload=req.body;
+    console.log(payload);
+    products.push(payload);
+    res.send("Product added successfully!");
+})
+
+//express.json
+-go back read value of payload and populate req.body (payload new entries)
+-it is a middleware
+-Returns middleware that only parses json and only looks at requests where the Content-Type header matches the type option.
