@@ -23,7 +23,7 @@ function App() {
         <Route path='/' element={<ListOfCourses/>}/>
         <Route path='/posts' Component={Posts}/>
         <Route path='/counter' Component={Counter}/>
-         <Route path="/CourseDetails" element={<CourseDetails />} />
+         <Route path="/Coursedetails/:id" element={<CourseDetails />} />
         <Route path='*' element={<img src='https://media.licdn.com/dms/image/v2/C5112AQEw1fXuabCTyQ/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1581099611064?e=1756944000&v=beta&t=BmiOV7zE4n6uu9FyS4bB1ajJtQhYZNvHu2Q6bsQPXYg' width="1000px"/>}/> 
         {/* * is like catch above one not match then * */}
       </Routes>

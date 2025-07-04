@@ -232,6 +232,30 @@ function component
 
 
 
+...........................................................
+3phases
+1. mounting
+2. Updating
+3. unmounting
+
+
+//routing params
+<Route path="/CourseDetails/:id" element={<CourseDetails />} />
+:id is rounting params
+
+<Link to={`/courseDetails/${props.courseDetails.id}`}>
+
+import React from 'react'
+import { useParams } from 'react-router-dom'
+
+function CourseDetails() {
+  const {id}=useParams(); //shoule be same as given in app.jsx while defining the router
+  return (
+    <div>CourseDetails for {id}</div>
+  )
+}
+
+export default CourseDetails
 
 
 
