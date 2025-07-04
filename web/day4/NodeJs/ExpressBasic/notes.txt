@@ -17,3 +17,14 @@ app.listen(port, () => {
 })
 
 
+
+
+
+//middleware
+//app.get app.get as many calls made
+-solution is middlewares
+To serve static files such as images, CSS files, and JavaScript files, use the express.static built-in middleware function in Express.
+The function signature is:
+express.static(root, [options])
+app.use(express.static('../client'));
+app.use(express.static(path.join(__dirname, '../client')));

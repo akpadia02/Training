@@ -9,15 +9,20 @@ const port = 3000
 //     res.send('Hello World!')
 // })
 
-app.get('/', (req, res) => {
-    res.sendFile("/index.html",{root: __dirname+"/../client"});
-})
-app.get('/styles.css', (req, res) => {
-    res.sendFile("/styles.css",{root: __dirname+"/../client"});
-})
-app.get('/client.js', (req, res) => {
-    res.sendFile("/client.js",{root: __dirname+"/../client"});
-})
+// app.get('/', (req, res) => {
+//     res.sendFile("/index.html",{root: __dirname+"/../client"});
+// })
+// app.get('/styles.css', (req, res) => {
+//     res.sendFile("/styles.css",{root: __dirname+"/../client"});
+// })
+// app.get('/client.js', (req, res) => {
+//     res.sendFile("/client.js",{root: __dirname+"/../client"});
+// })
+
+
+app.use(express.static('../client'));
+app.use(express.static(path.join(__dirname, '../client')));
+ //middleware->extra functionality on top of default function
 
 
 app.get('/products', (req, res) => {
