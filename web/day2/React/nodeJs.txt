@@ -1,0 +1,18 @@
+NodeJs
+-internally use JS event loop
+-all req are piped(queued) and when server free its dequeued in JS but in node 
+-two option to write code (synchronous and aychronous)
+-blocking is something that takes time (ie aychronous api)
+-thats why node is able to handle lot load and its fast
+-node is js runtime atlowest level and use to create fast servers
+-uses v8 engine ie just in broweser (fastest)
+-u have nodejs apis using c++ internally
+-js dont have access to kernal os etc (server needs to store info and its needed os ie js cant where node js comes in picture)
+-libUV takes care about all this (its library)
+-use to create server side web application which is faster
+
+
+
+nodeis running means what?
+-its ultimately .exe file
+-
