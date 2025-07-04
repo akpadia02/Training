@@ -1,0 +1,15 @@
+3 modules provided by node
+    1. built in modules (dont need to install them)
+    2. custom(module.exports={add,sub};)
+    3. npm
+
+
+with es6
+-2 types of exports (name and default export)
+
+
+package.json
+-have scripts that u ahve to run
+-dependencides needed
+(npm init -y)
+-type:modules in package.json
