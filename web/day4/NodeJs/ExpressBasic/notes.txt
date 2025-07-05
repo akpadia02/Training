@@ -45,3 +45,10 @@ app.post('/newProduct', (req, res) => {
 -go back read value of payload and populate req.body (payload new entries)
 -it is a middleware
 -Returns middleware that only parses json and only looks at requests where the Content-Type header matches the type option.
+
+
+//express generater
+https://expressjs.com/en/starter/generator.html
+Use the application generator tool, express-generator, to quickly create an application skeleton.
+
+//router in Express

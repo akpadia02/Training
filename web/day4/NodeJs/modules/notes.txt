@@ -1,7 +1,7 @@
 3 modules provided by node
     1. built in modules (dont need to install them)
     2. custom(module.exports={add,sub};)
-    3. npm
+    3. npm (yarn)
 
 
 with es6
@@ -16,3 +16,4 @@ package.json
 
 
 
+"dev":"nodemon src/server/app.js",

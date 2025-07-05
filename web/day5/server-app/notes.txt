@@ -1,0 +1,41 @@
+mongodb
+-object data mapper-mongoose
+-two version: atlas, community
+
+
+/products/community version
+/command shell
+
+
+mongod
+mongosh
+dbs
+show dbs
+
+
+use RBUdb
+mongod
+mongoshell
+show dbs(list databases)
+use dbname (for switching database)
+db.createCollection("collectionname") // creates collection(called as table in sql)
+db.collectionname.insertOne("id":1 ,"name": netal)
+db.collectionname.insertMany([....])
+
+//odm: object data mapper-mongoose
+-between node and application db there is odm
+https://mongoosejs.com/
+
+npm install mongoose mongodb
+
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://127.0.0.1:27017/test');
+
+
+
+
+
+//cors
+-cross origin resever policy
+-enable these cors and to be done from server side
+-

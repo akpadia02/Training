@@ -30,7 +30,9 @@ function ListOfCourses() {
   const [courses,setCourses]=useState([])
   useEffect(function(){
         //ajax
-        axios.get("http://localhost:3500/courses").then(res=>setCourses(res.data));
+        // axios.get("http://localhost:3500/courses").then(res=>setCourses(res.data));
+        axios.get("http://localhost:3000/courses").then(res=>setCourses(res.data));
+
     },[]);
   return (
     <div className="row">

@@ -6,6 +6,8 @@ function Posts(){
     useEffect(function(){
         //ajax
         axios.get("https://jsonplaceholder.typicode.com/posts").then(res=>setPosts(res.data));
+        // axios.get("http://localhost:3000/courses").then(res=>setPosts(res.data));
+
     },[]);
     return (
         <div>
