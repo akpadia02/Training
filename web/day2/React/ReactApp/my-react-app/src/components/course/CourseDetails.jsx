@@ -8,7 +8,7 @@ function CourseDetails() {
   const [course, setCourse] = useState([]);
   useEffect(function () {
     //ajax
-    axios.get(`http://localhost:3500/courses/${id}`).then(res => {
+    axios.get(`http://localhost:3000/courses/${id}`).then(res => {
       setCourse(res.data);
       console.log(res.data);
     });

@@ -5,6 +5,7 @@ const Schema=mongoose.Schema;
 const courseSchema=new Schema({
     id: String,
     title: String,
+    price: Number,
     rating: Number,
     likes: Number,
     imageUrl: String,

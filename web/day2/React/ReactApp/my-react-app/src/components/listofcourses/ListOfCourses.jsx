@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Course from "../course/course.function";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 function ListOfCourses() {
   // var courses = [
@@ -27,19 +28,38 @@ function ListOfCourses() {
   //       "Redux is an open-source JavaScript library for managing application state. It is most commonly used with libraries such as React or Angular for building user interfaces. Similar to (and inspired by) Facebook's Flux architecture, it was created by Dan Abramov and Andrew Clark.",
   //   }
   // ];
-  const [courses,setCourses]=useState([])
-  useEffect(function(){
-        //ajax
-        // axios.get("http://localhost:3500/courses").then(res=>setCourses(res.data));
-        axios.get("http://localhost:3000/courses").then(res=>setCourses(res.data));
+  const [courses, setCourses] = useState([])
+  const navigate = useNavigate();
+  useEffect(function () {
+    //ajax
+    // axios.get("http://localhost:3500/courses").then(res=>setCourses(res.data));
+    axios.get("http://localhost:3000/courses").then(res => setCourses(res.data));
 
-    },[]);
+  }, []);
+  
+  const handleDelete = (deletedId) => {
+    setCourses(courses.filter(course => course._id !== deletedId));
+  };
+   const handleAddCourse = () => {
+    navigate("/addcourse"); // route to add course page
+  };
+
   return (
-    <div className="row">
+    <>
+      <div className="d-flex justify-content-between align-items-center my-3">
+        <h2>All Courses</h2>
+         <button className="btn btn-primary" onClick={handleAddCourse}>
+          <i className="fa fa-plus"></i> Add Course
+        </button>
+
+      </div>
+      <div className="row">
         {courses.map(course => (
-          <Course coursedetails={course} key={course.id}/>
+          <Course coursedetails={course} key={course.id} onDelete={handleDelete} />
         ))}
-    </div>
+      </div>
+    </>
+
   )
 }
 

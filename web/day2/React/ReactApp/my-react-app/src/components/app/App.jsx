@@ -1,11 +1,13 @@
 import React from 'react'
 import FMessage from '../functional/message.functional';
 import Counter from '../functional/counter';
-import ListOfCourses from "../listofcourses/listofcourses";
 import Posts from '../posts/posts';
 import {BrowserRouter,Routes,Route,Link} from 'react-router-dom'
 import CourseDetails from '../course/CourseDetails';
 import Navbar from '../Navbar';
+import AddCourse from '../course/addCourse';
+import ListOfCourses from '../listofcourses/ListOfCourses';
+import EditCourse from '../course/editCourse';
 
 function App() {
   return (
@@ -23,7 +25,11 @@ function App() {
         <Route path='/' element={<ListOfCourses/>}/>
         <Route path='/posts' Component={Posts}/>
         <Route path='/counter' Component={Counter}/>
+        {/* <Route path='/courses' Component={<ListOfCourses />}/> */}
+        <Route path="/editcourse/:id" element={<EditCourse />} />
+
          <Route path="/Coursedetails/:id" element={<CourseDetails />} />
+         <Route path="/addcourse" element={<AddCourse />} />
         <Route path='*' element={<img src='https://media.licdn.com/dms/image/v2/C5112AQEw1fXuabCTyQ/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1581099611064?e=1756944000&v=beta&t=BmiOV7zE4n6uu9FyS4bB1ajJtQhYZNvHu2Q6bsQPXYg' width="1000px"/>}/> 
         {/* * is like catch above one not match then * */}
       </Routes>
