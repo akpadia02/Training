@@ -179,3 +179,14 @@ npm start
 - **TypeScript**: [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 - **Node.js**: [Node.js Documentation](https://nodejs.org/docs/)
 - **Express.js**: [Express.js Guide](https://expressjs.com/)
+
+
+## Download MongoDB
+# 1. Download MongoDB Community Edition
+Visit: https://www.mongodb.com/try/download/community
+# 2. Run the Installer
+- Choose “Complete” setup
+- Select “Install MongoDB as a Service”
+# 3. Verify Installation
+Open Command Prompt and run:
+mongod --version
